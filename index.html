@@ -3,12 +3,16 @@
   <head>
     <title>JavaScript Challenges</title>
     <style>
+      #emailfield{
+        display:  none;
+      }
     </style>
     
     <script>
 	function toggleEmail(){
+    var box = document.getElementById("subscribe")
     var x = document.getElementById("emailfield");
-    if (x.style.display === "none") {
+    if (box.checked == true) {
       x.style.display = "block";
     } else {
       x.style.display = "none";

@@ -6,9 +6,17 @@
     
     <script>
 	    function setHomeAddress(){
+        var checkbox = document.getElementById("useBilling");
         var billing = document.getElementById("billing");
         var home = document.getElementById("home");
-        home.value = billing.value;
+        if (checkbox.checked == true){
+          home.value = billing.value;
+          home.disabled = true;
+        }
+        else{
+          home.disabled = false;
+          home.value = '';
+        }
       }
     </script>
 </head>

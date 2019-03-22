@@ -3,57 +3,88 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Challenge 4</title>
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-    <style>
+	<style>
+	body{
+		margin: 2%;
+		border: 1px solid black;
+		background-color: #b3b3b3;
+	}
+	#image{
+    	line-height:325px;
+		width: 388px;
+    	height: 325px;
+		border:5px solid black;
+		margin:0 auto;
+    	background-repeat: no-repeat;
+    	color:#FFFFFF;
+    	text-align: center;
+    	background-color: #8e68ff;
+    	background-size: 100%;
+    	margin-bottom:25px;
+    	font-size:150%;
+	}
+	.preview{
+		width:10%;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+	img{
+		width:95%;
+	}
+	h1{
+		text-align: center;
+	}
+	</style>
 
-    .errormsg { 
-        font-family: 'Exo 2', sans-serif;
-    	color:red;
-    	display:none; } 
-    </style>
-    
-    <script>
-    function checkForm(){
+	<script>
+	function upDate(previewPic){
 
-        console.log("Hi")
+		document.getElementById("image").style.backgroundImage = "url(" +previewPic.src + ")";
 
-        var fullname = document.getElementById("fullname").value;
-        var streetaddr = document.getElementById("streetaddr").value;
-        var nameerrormsg = document.getElementById("nameerrormsg");
-        var addrerrormsg = document.getElementById("addrerrormsg");
+		document.getElementById("image").alt = document.getElementById(previewPic.alt);
+	}
 
-        nameerrormsg.style.display = "none";
-        addrerrormsg.style.display = "none";
+	function unDo(){
 
-        if (fullname == null || fullname == ""){
-            nameerrormsg.style.display = "block";
-            return false;
-        }
+		document.getElementById("image").style.backgroundImage = "";
 
-        if(streetaddr == null || streetaddr == ""){
-            addrerrormsg.style.display = "block";
-            return false;
-        }
-
-    	// Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
-    }  
-    </script>
+		document.getElementById("image").alt = "";	
+	}
+	</script>
 </head>
-<body>
-    <h1>Challenge 4</h1>
-	<form action="challenge5.html" onsubmit="return checkForm();">
-        <fieldset>
-        <legend>Personal details</legend>
-          <label for="fullname">Full name: </label>
-            <input type="text" name="fullname" id="fullname"><br/>
-            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
 
-          <label for ="streetaddr"></label>
-            Street Address:
-            <input type="text" name="streetaddr" id="streetaddr">
-            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
-        </fieldset>
-        <input type="submit" value="Submit it!"> 
-    </form>
+<body>
+	<h1>Challenge 4</h1>
+		<div id = "image">
+			Hover or tab over/into an image below.
+		</div>
+
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+		<img tabindex="0" class = "preview" 
+			alt = "Styling with a Bandana" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->	
+		<img tabindex="0" class = "preview" 
+			alt = "With My Boy" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+	
+		<!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+		<img tabindex="0" class = "preview" alt="Young Puppy" 
+			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+		<img tabindex="0" class = "preview" 
+			alt = "Stuffed Crust Pizza" 
+			src = "https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/03/stuffed-crust-pizza-3.jpg" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+		<img tabindex="0" class = "preview" 
+			alt = "Pep pizza" 
+			src = "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/dc23cd051d2249a5903d25faf8eeee4c/BFV36537_CC2017_2IngredintDough4Ways-FB.jpg" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+		<img tabindex="0" class = "preview" 
+			alt = "Supreme Pizza" 
+			src = "https://therecipecritic.com/wp-content/uploads/2018/08/zucchini_crust_pizza-1-of-1.jpg" onfocus = "upDate(this)" onblur = "unDo()" onmouseover = "upDate(this)" onmouseleave = "unDo()";>
 </body>
 </html>
+	
